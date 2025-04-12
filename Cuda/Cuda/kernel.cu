@@ -53,7 +53,6 @@ int main() {
     // Device (GPU) arrays
     float* d_hoursWorked, * d_hourlyRate, * d_pay;
 
-
     clock_t start, end;
     double cpu_time_used;
     start = clock();  // Start timing
@@ -67,13 +66,10 @@ int main() {
     cudaMemcpy(d_hoursWorked, hoursWorked, numPeople * sizeof(float), cudaMemcpyHostToDevice);
     cudaMemcpy(d_hourlyRate, hourlyRate, numPeople * sizeof(float), cudaMemcpyHostToDevice);
 
-
-    //start = clock();  // Start timing
+    // start = clock();  // Start timing (when excluding memory transfers)
 
     // Launch Kernel with 1 block of 100 threads
     calculatePay <<<1, numPeople >> > (d_hoursWorked, d_hourlyRate, d_pay);
-    
- 
 
     // Copy result back to Host
     cudaMemcpy(pay, d_pay, numPeople * sizeof(float), cudaMemcpyDeviceToHost);
