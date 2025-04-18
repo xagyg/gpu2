@@ -26,7 +26,7 @@ __device__ float calculatePersonPay(float hours, float rate) {
 __global__ void calculatePay(float* hoursWorked, float* hourlyRate, float* pay) {
     int idx = threadIdx.x; // Thread ID corresponds to person ID
 
-    pay[idx] = calculatePersonPay(hoursWorked[idx], hourlyRate[idx%10]);
+    pay[idx] = calculatePersonPay(hoursWorked[idx%100], hourlyRate[idx%10]);
 }
 
 
