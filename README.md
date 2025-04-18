@@ -4,6 +4,8 @@ Cuda contains a Visual Studio 2022 solution for executing a simulated pay calcul
 
 CudaEvents contains a Visual Studio 2022 solution for executing a simulated pay calculation for 100 employees on the GPU. Timing of GPU-only processing is included.
 
+CudaLarge contains a Visual Studio 2022 solution for executing a simulated pay calculation for 100 employees on the GPU. It uses an updated multi-block algorithm for larger data sets.
+
 Multithreaded contains a Visual Studio 2022 solution for executing a simulated pay calculation for 100 employees as a multi-threaded C program.
 
 To change the number of pays to process, simply assign the desired value to the variable numPeople.
