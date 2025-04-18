@@ -39,7 +39,7 @@ int main() {
 
     // Calculate pay for each person sequentially
     for (int i = 0; i < numPeople; i++) {
-        pay[i] = calculatePersonPay(hoursWorked[i], hourlyRate[i%10]);
+        pay[i] = calculatePersonPay(hoursWorked[i%100], hourlyRate[i%10]);
      //   printf("Person %d: $%.2f\n", i, pay[i]);
     }
 
