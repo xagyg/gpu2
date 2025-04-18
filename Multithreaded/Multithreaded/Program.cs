@@ -20,7 +20,7 @@ class Program
 
     static void Main()
     {
-        const int numPeople = 1000;
+        const int numPeople = 100;
 
         float[] hoursWorked = new float[100]
         {
